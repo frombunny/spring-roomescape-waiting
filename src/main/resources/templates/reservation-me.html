@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Roomescape Reservations</title>
+    <link rel="stylesheet" th:href="@{/css/app.css}">
+</head>
+<body class="page page-reservation">
+<main class="shell">
+    <nav class="service-nav" aria-label="주요 메뉴">
+        <a class="brand" href="/reservation">ROOMESCAPE</a>
+        <div class="nav-links">
+            <a href="/reservation">테마</a>
+            <a href="/reservation/new">예약</a>
+            <a class="active" href="/reservation/me">내 예약</a>
+            <a href="/admin">관리자</a>
+        </div>
+    </nav>
+
+    <section class="page-hero">
+        <div>
+            <p class="eyebrow">My Reservations</p>
+            <h1>내 예약</h1>
+        </div>
+        <a class="button primary" href="/reservation/new">새 예약</a>
+    </section>
+
+    <section class="booking-layout two-column">
+        <aside class="flow-panel">
+            <a class="flow-step done" href="/reservation">
+                <span>01</span>
+                <strong>테마 탐색</strong>
+            </a>
+            <a class="flow-step done" href="/reservation/new">
+                <span>02</span>
+                <strong>예약 정보 입력</strong>
+            </a>
+            <a class="flow-step current" href="/reservation/me">
+                <span>03</span>
+                <strong>예약 확인</strong>
+            </a>
+        </aside>
+
+        <section class="panel">
+            <div class="panel-header">
+                <p class="eyebrow">Lookup</p>
+                <h2>내 예약 조회</h2>
+            </div>
+
+            <div id="check-feedback" class="feedback" hidden></div>
+
+            <form id="check-form" class="stack-form compact-form">
+                <label class="field">
+                    <span>예약자 이름</span>
+                    <div class="input-action">
+                        <input id="check-name" type="text" placeholder="조회할 이름을 입력하세요" required>
+                        <button type="submit" class="button secondary">조회</button>
+                    </div>
+                </label>
+            </form>
+
+            <div id="my-reservation-list" class="empty-state my-reservation-list">
+                이름을 입력하고 조회 버튼을 눌러주세요.
+            </div>
+        </section>
+    </section>
+
+    <select id="theme-select" hidden aria-hidden="true">
+        <option value="">테마를 선택하세요</option>
+        <option th:each="theme : ${themes}"
+                th:value="${theme.id}"
+                th:text="${theme.name}">
+            미드나잇 시그널
+        </option>
+    </select>
+</main>
+<script th:src="@{/js/reservation-me-page.js}"></script>
+</body>
+</html>

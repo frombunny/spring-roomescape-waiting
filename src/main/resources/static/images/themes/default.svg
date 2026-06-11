@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" role="img" aria-label="Room escape theme">
+  <rect width="800" height="600" fill="#111"/>
+  <rect x="92" y="82" width="616" height="436" fill="#f4f1eb"/>
+  <rect x="136" y="126" width="528" height="348" fill="#111"/>
+  <path d="M256 474V214h288v260" fill="#f4f1eb"/>
+  <path d="M400 214v260" stroke="#111" stroke-width="12"/>
+  <circle cx="432" cy="348" r="10" fill="#111"/>
+  <text x="92" y="566" fill="#f4f1eb" font-family="Arial, sans-serif" font-size="46" font-weight="900">ROOMESCAPE</text>
+</svg>

@@ -11,10 +11,7 @@
     <section class="hero admin-hero">
         <div class="hero-copy">
             <p class="eyebrow">Admin Dashboard</p>
-            <h1>운영 데이터를 한 화면에서 관리합니다.</h1>
-            <p class="hero-text">
-                예약 목록 확인, 예약 시간 등록, 테마 등록과 삭제를 모두 이 페이지에서 처리할 수 있습니다.
-            </p>
+            <h1>예약 관리</h1>
             <div class="hero-actions">
                 <a class="button ghost" href="/">사용자 예약 페이지</a>
             </div>
@@ -117,7 +114,7 @@
 
         <div id="theme-list" class="theme-grid">
             <article class="theme-card admin" th:each="theme : ${themes}">
-                <img th:src="${theme.thumbnailImageUrl}" th:alt="${theme.name}" loading="lazy">
+                <img th:src="${theme.thumbnailImageUrl}" th:alt="${theme.name}" loading="lazy" onerror="this.src='/images/themes/default.svg'">
                 <div class="theme-card-body">
                     <div class="theme-card-head">
                         <strong th:text="${theme.name}">테마</strong>

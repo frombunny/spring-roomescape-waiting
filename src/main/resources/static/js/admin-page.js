@@ -133,7 +133,7 @@ function renderThemes(themes) {
 
     themeList.innerHTML = themes.map((theme) => `
         <article class="theme-card admin">
-            <img src="${theme.thumbnailImageUrl}" alt="${theme.name}" loading="lazy">
+            <img src="${theme.thumbnailImageUrl}" alt="${theme.name}" loading="lazy" onerror="this.src='/images/themes/default.svg'">
             <div class="theme-card-body">
                 <div class="theme-card-head">
                     <strong>${theme.name}</strong>

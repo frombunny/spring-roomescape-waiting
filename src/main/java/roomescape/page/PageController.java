@@ -25,8 +25,20 @@ public class PageController {
         LocalDate endDate = LocalDate.now(clock).minusDays(1);
         model.addAttribute("themes", themeService.getThemes(0, 10));
         model.addAttribute("popularThemes", themeService.getWeeksTopThemes(startDate, endDate, 10));
-        model.addAttribute("today", LocalDate.now(clock));
         return "reservation";
+    }
+
+    @GetMapping("/reservation/new")
+    public String reservationNewPage(Model model) {
+        model.addAttribute("themes", themeService.getThemes(0, 10));
+        model.addAttribute("today", LocalDate.now(clock));
+        return "reservation-new";
+    }
+
+    @GetMapping("/reservation/me")
+    public String myReservationPage(Model model) {
+        model.addAttribute("themes", themeService.getThemes(0, 10));
+        return "reservation-me";
     }
 
     @GetMapping("/admin")
